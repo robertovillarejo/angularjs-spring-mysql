@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="es" dir="ltr">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,9 @@
     <!-- build:css content/css/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/rdash-ui/dist/css/rdash.css">
+    <link rel="stylesheet" href="bower_components/rdash-ui/dist/css/rdash.min.css">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
     <!-- endinject -->
     <!-- endbuild -->
@@ -21,24 +25,81 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.webapp" />
 </head>
+
 <body ng-app="kukulkanApp" ng-strict-di>
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <page-ribbon></page-ribbon>
-    <div ui-view="navbar" ng-cloak></div>
-    <div class="container">
-        <div class="well" ui-view="content">
-            <!-- Angular views -->
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+        <!-- Navigation Bar -->
+        <div ui-view="navbar" ng-cloak></div>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper">
+            <div class="page-content">
+                <!-- Header Bar -->
+                <div class="row header">
+                    <div class="col-xs-12">
+                        <!--<div class="user pull-right">
+                            <div class="item dropdown" uib-dropdown>
+                                <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+                                    <img src="content/images/avatar01.svg">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-header">Joe Bloggs</li>
+                                    <li class="divider"></li>
+                                    <li class="link">
+                                        <a href="#"> Profile </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="link">
+                                        <a href="#"> Sign out </a>
+                                    </li>
+                                    <li class="divider" ui-sref-active="active" ng-switch-when="true">
+                                        <a href="" ng-click="vm.logout()" id="logout">
+                                            <span class="glyphicon glyphicon-log-out"></span>&nbsp;
+                                            <span data-translate="global.menu.account.logout">Sign out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="item dropdown">
+                                <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-bell"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-header">Notifications</li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">Server Down!</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                <!-- End Header Bar -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div ui-view="content"></div>
+                        <!-- Footer -->
+                        <div class="footer" ng-cloak>
+                            <p data-translate="footer">This is your footer</p>
+                        </div>
+                        <!-- End Footer -->
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- End Content Wrapper -->
 
-        <div class="footer" ng-cloak>
-            <p data-translate="footer">This is your footer</p>
-        </div>
+        <noscript>
+            <h1>You must enable javascript to view this page.</h1>
+        </noscript>
     </div>
-    <noscript>
-        <h1>You must enable javascript to view this page.</h1>
-    </noscript>
+    <!-- End Page Wrapper -->
+
     <!-- uncomment this for adding service worker
         <script>
             if ('serviceWorker' in navigator) {
@@ -113,6 +174,7 @@
     <script src="app/components/util/sort.directive.js"></script>
     <script src="app/components/util/parse-links.service.js"></script>
     <script src="app/components/util/pagination-util.service.js"></script>
+    <script src="app/components/util/modal-draggable.directive.js"></script>
     <script src="app/components/util/jhi-item-count.directive.js"></script>
     <script src="app/components/util/error.constants.js"></script>
     <script src="app/components/util/date-util.service.js"></script>
@@ -190,4 +252,5 @@
     <!-- endbuild -->
 
 </body>
+
 </html>
