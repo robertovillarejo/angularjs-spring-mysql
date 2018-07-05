@@ -30,13 +30,13 @@
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <!-- Page Wrapper -->
+
     <div id="page-wrapper">
         <div ui-view="navbar" ng-cloak></div>
-        <!-- Content Wrapper -->
+        <div ui-view="headerbar" ng-cloak></div>
+
         <div id="content-wrapper">
             <div class="page-content">
-                <div ui-view="headerbar" ng-cloak></div>
                 <div class="row">
                     <div class="col-md-12">
                         <div ui-view="content"></div>
@@ -48,13 +48,11 @@
                 </div>
             </div>
         </div>
-        <!-- End Content Wrapper -->
 
         <noscript>
             <h1>You must enable javascript to view this page.</h1>
         </noscript>
     </div>
-    <!-- End Page Wrapper -->
 
     <!-- uncomment this for adding service worker
         <script>

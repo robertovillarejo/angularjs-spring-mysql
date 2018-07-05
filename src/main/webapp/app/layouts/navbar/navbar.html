@@ -1,4 +1,3 @@
-<!-- Sidebar -->
 <div id="sidebar-wrapper" role="navigation">
     <ul class="sidebar" ng-switch="vm.isAuthenticated()">
         <li class="sidebar-main">
@@ -9,14 +8,14 @@
         </li>
         <li class="sidebar-list" ui-sref-active="active">
             <a ui-sref="home" ng-click="vm.collapseNavbar()">
-                <span class="glyphicon glyphicon-home"></span>
+                <span class="menu-icon glyphicon glyphicon-home"></span>
                 <span class="hidden-sm" data-translate="global.menu.home">Home</span>
             </a>
         </li>
         <li ng-class="{active: vm.$state.includes('entity')}" ng-switch-when="true" uib-dropdown class="sidebar-list item dropdown pointer">
             <a class="dropdown-toggle" uib-dropdown-toggle href="" id="entity-menu">
-                <span>
-                    <span class="glyphicon glyphicon-th-list"></span>
+                <span ng-click="vm.toggleNavbar()">
+                    <span class="menu-icon glyphicon glyphicon-th-list"></span>
                     <span class="hidden-sm" data-translate="global.menu.entities.main">
                         Entities
                     </span>
@@ -30,8 +29,8 @@
         </li>
         <li ng-class="{active: vm.$state.includes('admin')}" ng-switch-when="true" has-authority="ROLE_ADMIN" uib-dropdown class="sidebar-list item dropdown pointer">
             <a class="dropdown-toggle" uib-dropdown-toggle href="" id="admin-menu">
-                <span>
-                    <span class="glyphicon glyphicon-tower"></span>
+                <span ng-click="vm.toggleNavbar()">
+                    <span class="menu-icon glyphicon glyphicon-tower"></span>
                     <span class="hidden-sm" data-translate="global.menu.admin.main">Administration</span>
                     <b class="caret"></b>
                 </span>
@@ -88,9 +87,9 @@
                 </li>
             </ul>
             <li ui-sref-active="active" uib-dropdown class="sidebar-list item dropdown pointer" ng-controller="JhiLanguageController as languageVm">
-                <a class="dropdown-toggle" uib-dropdown-toggle href="" ng-if="languageVm.languages.length > 1">
+                <a ng-click="vm.toggleNavbar()" class="dropdown-toggle" uib-dropdown-toggle href="" ng-if="languageVm.languages.length > 1">
                     <span>
-                        <span class="glyphicon glyphicon-flag"></span>
+                        <span class="menu-icon glyphicon glyphicon-flag"></span>
                         <span class="hidden-sm" data-translate="global.menu.language">Language</span>
                         <b class="caret"></b>
                     </span>
@@ -112,4 +111,3 @@
         </div>
     </div>
 </div>
-<!-- End Sidebar -->
