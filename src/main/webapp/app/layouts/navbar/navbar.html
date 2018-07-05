@@ -2,7 +2,7 @@
 <div id="sidebar-wrapper" role="navigation">
     <ul class="sidebar" ng-switch="vm.isAuthenticated()">
         <li class="sidebar-main">
-            <a ng-click="vm.toggleSidebar()">
+            <a ng-click="vm.toggleNavbar()">
                 <span data-translate="global.title">Kukulkan</span>
                 <span class="menu-icon glyphicon glyphicon-transfer"></span>
             </a>
@@ -27,50 +27,6 @@
             <ul class="dropdown-menu" uib-dropdown-menu>
                 <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
             </ul>
-
-        </li>
-        <li ng-class="{active: vm.$state.includes('account')}" uib-dropdown class="sidebar-list item dropdown pointer">
-            <a class="dropdown-toggle" href="" id="account-menu" uib-dropdown-toggle>
-                <span>
-                    <span class="glyphicon glyphicon-user"></span>
-                    <span class="hidden-sm" data-translate="global.menu.account.main">
-                        Account
-                    </span>
-                    <b class="caret"></b>
-                </span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-right">
-                <li class="link" ui-sref-active="active" ng-switch-when="true">
-                    <a ui-sref="settings" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-wrench"></span>&nbsp;
-                        <span data-translate="global.menu.account.settings">Settings</span>
-                    </a>
-                </li>
-                <li class="link" ui-sref-active="active" ng-switch-when="true">
-                    <a ui-sref="password" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-lock"></span>&nbsp;
-                        <span data-translate="global.menu.account.password">Password</span>
-                    </a>
-                </li>
-                <li class="link" ui-sref-active="active" ng-switch-when="true">
-                    <a href="" ng-click="vm.logout()" id="logout">
-                        <span class="glyphicon glyphicon-log-out"></span>&nbsp;
-                        <span data-translate="global.menu.account.logout">Sign out</span>
-                    </a>
-                </li>
-                <li class="link" ui-sref-active="active" ng-switch-when="false">
-                    <a href="" ng-click="vm.login()" id="login">
-                        <span class="glyphicon glyphicon-log-in"></span>&nbsp;
-                        <span data-translate="global.menu.account.login">Sign in</span>
-                    </a>
-                </li>
-                <li class="link" ui-sref-active="active" ng-switch-when="false">
-                    <a ui-sref="register" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;
-                        <span data-translate="global.menu.account.register">Register</span>
-                    </a>
-                </li>
-            </ul>
         </li>
         <li ng-class="{active: vm.$state.includes('admin')}" ng-switch-when="true" has-authority="ROLE_ADMIN" uib-dropdown class="sidebar-list item dropdown pointer">
             <a class="dropdown-toggle" uib-dropdown-toggle href="" id="admin-menu">
@@ -83,50 +39,50 @@
             <ul class="dropdown-menu">
                 <li ui-sref-active="active">
                     <a ui-sref="user-management" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-user"></span>&nbsp;
+                        <span class="glyphicon fa-users"></span>&nbsp;
                         <span data-translate="global.menu.admin.userManagement">User management</span>
                     </a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="jhi-metrics" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-dashboard"></span>&nbsp;
+                        <span class="glyphicon fa-chart-area"></span>&nbsp;
                         <span data-translate="global.menu.admin.metrics">Metrics</span>
                     </a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="jhi-health" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-heart"></span>&nbsp;
+                        <span class="glyphicon fa-heartbeat"></span>&nbsp;
                         <span data-translate="global.menu.admin.health">Health</span>
                     </a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="jhi-configuration" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-list-alt"></span>&nbsp;
+                        <span class="glyphicon fa-cog"></span>&nbsp;
                         <span data-translate="global.menu.admin.configuration">Configuration</span>
                     </a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="audits" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-bell"></span>&nbsp;
+                        <span class="glyphicon fa-edit"></span>&nbsp;
                         <span data-translate="global.menu.admin.audits">Audits</span>
                     </a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="logs" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+                        <span class="glyphicon fa-server"></span>&nbsp;
                         <span data-translate="global.menu.admin.logs">Logs</span>
                     </a>
                 </li>
                 <li ng-show="vm.swaggerEnabled" ui-sref-active="active">
                     <a ui-sref="docs" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-book"></span>&nbsp;
+                        <span class="glyphicon fa-book"></span>&nbsp;
                         <span data-translate="global.menu.admin.apidocs">API</span>
                     </a>
                 </li>
                 <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here-->
                 <li ng-hide="vm.inProduction">
                     <a href='/h2-console' target="_tab" ng-click="vm.collapseNavbar()">
-                        <span class="glyphicon glyphicon-hdd"></span>&nbsp;
+                        <span class="glyphicon fa-database"></span>&nbsp;
                         <span data-translate="global.menu.admin.database">Database</span>
                     </a>
                 </li>

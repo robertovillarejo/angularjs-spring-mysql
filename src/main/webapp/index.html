@@ -30,64 +30,20 @@
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <page-ribbon></page-ribbon>
     <!-- Page Wrapper -->
     <div id="page-wrapper">
-        <!-- Navigation Bar -->
         <div ui-view="navbar" ng-cloak></div>
         <!-- Content Wrapper -->
         <div id="content-wrapper">
             <div class="page-content">
-                <!-- Header Bar -->
-                <div class="row header">
-                    <div class="col-xs-12">
-                        <!--<div class="user pull-right">
-                            <div class="item dropdown" uib-dropdown>
-                                <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
-                                    <img src="content/images/avatar01.svg">
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li class="dropdown-header">Joe Bloggs</li>
-                                    <li class="divider"></li>
-                                    <li class="link">
-                                        <a href="#"> Profile </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="link">
-                                        <a href="#"> Sign out </a>
-                                    </li>
-                                    <li class="divider" ui-sref-active="active" ng-switch-when="true">
-                                        <a href="" ng-click="vm.logout()" id="logout">
-                                            <span class="glyphicon glyphicon-log-out"></span>&nbsp;
-                                            <span data-translate="global.menu.account.logout">Sign out</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="item dropdown">
-                                <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-bell"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li class="dropdown-header">Notifications</li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Server Down!</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>-->
-                    </div>
-                </div>
-                <!-- End Header Bar -->
+                <div ui-view="headerbar" ng-cloak></div>
                 <div class="row">
                     <div class="col-md-12">
                         <div ui-view="content"></div>
-                        <!-- Footer -->
+                        <!-- Angular views -->
                         <div class="footer" ng-cloak>
                             <p data-translate="footer">This is your footer</p>
                         </div>
-                        <!-- End Footer -->
                     </div>
                 </div>
             </div>
@@ -164,6 +120,7 @@
     <script src="app/services/auth/account.service.js"></script>
     <script src="app/layouts/navbar/navbar.controller.js"></script>
     <script src="app/layouts/navbar/active-menu.directive.js"></script>
+    <script src="app/layouts/headerbar/headerbar.controller.js"></script>
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>

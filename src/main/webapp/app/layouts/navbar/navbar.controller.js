@@ -1,57 +1,41 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('kukulkanApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
+    NavbarController.$inject = ['$state', 'Principal', 'ProfileService'];
 
-    function NavbarController ($state, Auth, Principal, ProfileService, LoginService) {
+    function NavbarController($state, Principal, ProfileService) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
         vm.isAuthenticated = Principal.isAuthenticated;
-        vm.isSidebarCollapsed = true;
 
-        ProfileService.getProfileInfo().then(function(response) {
+        ProfileService.getProfileInfo().then(function (response) {
             vm.inProduction = response.inProduction;
             vm.swaggerEnabled = response.swaggerEnabled;
         });
 
-        vm.login = login;
-        vm.logout = logout;
         vm.toggleNavbar = toggleNavbar;
         vm.collapseNavbar = collapseNavbar;
         vm.$state = $state;
-        vm.toggleSidebar = toggleSidebar;
 
-        function login() {
-            collapseNavbar();
-            LoginService.open();
-        }
+        var pageWrapper = angular.element("#page-wrapper");
 
-        function logout() {
-            collapseNavbar();
-            Auth.logout();
-            $state.go('home');
+        function collapseNavbar() {
+            pageWrapper.removeClass('open');
+            vm.isNavbarCollapsed = true;
         }
 
         function toggleNavbar() {
-            vm.isNavbarCollapsed = !vm.isNavbarCollapsed;
-        }
-
-        function collapseNavbar() {
-            vm.isNavbarCollapsed = true;
-        }
-        function toggleSidebar () {
-            var pageWrapper = angular.element("#page-wrapper");
-            if (vm.isSidebarCollapsed) {
-            	pageWrapper.addClass('open');
+            if (vm.isNavbarCollapsed) {
+                pageWrapper.addClass('open');
             } else {
-            	pageWrapper.removeClass('open');
+                pageWrapper.removeClass('open');
             }
-            vm.isSidebarCollapsed = !vm.isSidebarCollapsed;
+            vm.isNavbarCollapsed = !vm.isNavbarCollapsed;
         };
     }
 })();
