@@ -5,9 +5,9 @@
         .module('kukulkanApp')
         .controller('HeaderbarController', HeaderbarController);
 
-    HeaderbarController.$inject = ['$scope', 'Principal', 'LoginService', 'Auth'];
+    HeaderbarController.$inject = ['$scope', '$state', 'Principal', 'LoginService', 'Auth'];
 
-    function HeaderbarController($scope, Principal, LoginService, Auth) {
+    function HeaderbarController($scope, $state, Principal, LoginService, Auth) {
         var vm = this;
 
         vm.account = null;

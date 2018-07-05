@@ -360,7 +360,27 @@ ui bootstrap tweaks
 /* ==========================================================================
 NUEVOS ESTILOS
 ========================================================================== */
+.row.header .user>.item img {
+    width: 64px;
+    height: 54px;
+    margin-top: 0px;
+    border-radius: 2px;
+}
+.well {
+    background-color: none!important;
+    border:none!important;
 
+}
+.logo-home {
+    width: 63%;
+    margin-top: -40px;
+    margin-left: 9px;
+}
+ul.top-menu {
+    margin-top: 85px;
+    margin-left: -40px;
+    list-style: none;
+}
 .title-home.ng-scope {
     font-size: 22px!important;
     color: #2D3E63;
