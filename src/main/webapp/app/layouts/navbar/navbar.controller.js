@@ -10,7 +10,7 @@
     function NavbarController($state, Principal, ProfileService) {
         var vm = this;
 
-        vm.isNavbarCollapsed = true;
+        vm.isNavbarCollapsed = false;
         vm.isAuthenticated = Principal.isAuthenticated;
 
         ProfileService.getProfileInfo().then(function (response) {
@@ -32,10 +32,10 @@
         function toggleNavbar() {
             if (vm.isNavbarCollapsed) {
                 pageWrapper.addClass('open');
+                vm.isNavbarCollapsed = false;
             } else {
-                pageWrapper.removeClass('open');
+                collapseNavbar();
             }
-            vm.isNavbarCollapsed = !vm.isNavbarCollapsed;
         };
     }
 })();

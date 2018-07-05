@@ -14,8 +14,8 @@
         </li>
         <li ng-class="{active: vm.$state.includes('entity')}" ng-switch-when="true" uib-dropdown class="sidebar-list item dropdown pointer">
             <a class="dropdown-toggle" uib-dropdown-toggle href="" id="entity-menu">
-                <span ng-click="vm.toggleNavbar()">
-                    <span class="menu-icon glyphicon glyphicon-th-list"></span>
+                <span>
+                    <span ng-click="vm.toggleNavbar()" class="menu-icon glyphicon glyphicon-th-list"></span>
                     <span class="hidden-sm" data-translate="global.menu.entities.main">
                         Entities
                     </span>
@@ -29,8 +29,8 @@
         </li>
         <li ng-class="{active: vm.$state.includes('admin')}" ng-switch-when="true" has-authority="ROLE_ADMIN" uib-dropdown class="sidebar-list item dropdown pointer">
             <a class="dropdown-toggle" uib-dropdown-toggle href="" id="admin-menu">
-                <span ng-click="vm.toggleNavbar()">
-                    <span class="menu-icon glyphicon glyphicon-tower"></span>
+                <span>
+                    <span ng-click="vm.toggleNavbar()" class="menu-icon glyphicon glyphicon-tower"></span>
                     <span class="hidden-sm" data-translate="global.menu.admin.main">Administration</span>
                     <b class="caret"></b>
                 </span>
@@ -87,9 +87,9 @@
                 </li>
             </ul>
             <li ui-sref-active="active" uib-dropdown class="sidebar-list item dropdown pointer" ng-controller="JhiLanguageController as languageVm">
-                <a ng-click="vm.toggleNavbar()" class="dropdown-toggle" uib-dropdown-toggle href="" ng-if="languageVm.languages.length > 1">
+                <a class="dropdown-toggle" uib-dropdown-toggle href="" ng-if="languageVm.languages.length > 1">
                     <span>
-                        <span class="menu-icon glyphicon glyphicon-flag"></span>
+                        <span ng-click="vm.toggleNavbar()" class="menu-icon glyphicon glyphicon-flag"></span>
                         <span class="hidden-sm" data-translate="global.menu.language">Language</span>
                         <b class="caret"></b>
                     </span>
