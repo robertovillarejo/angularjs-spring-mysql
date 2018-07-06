@@ -477,11 +477,9 @@ ul.sidebar .sidebar-list a {
     background-color: #fff;
 }
 .fa, .fas {
-
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     font-size: 24px;
-
 }
 .widget .widget-header {
     color: #fff;
@@ -530,8 +528,8 @@ ul.sidebar {
 ul.sidebar li a {
     width: 225px;
 }
-ul.sidebar .sidebar-main .menu-icon {
-    padding-right: 38px;
+.menu-icon {
+    margin-right: 15px;
 }
 .dropdown-menu {
     margin-left: -9px;
