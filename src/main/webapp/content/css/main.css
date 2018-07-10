@@ -4,26 +4,6 @@ body {
     color: #273758 !important;
     font-size: 16px;
 }
-/* ==========================================================================
-MEDIA QUERY
-========================================================================== */
-@media (max-width: 767px){
-.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #fff !important;
-}
-
-}
-@media (min-width: 768px){
-.navbar-right {
-    float: right !important;
-    margin-right: 33px;
-}
-}
-@media only screen and (min-width: 561px){
-#page-wrapper.open {
-    padding-left: 201px;
-}
-}
 
 /* ==========================================================================
 Hide ng-cloak on page load, https://docs.angularjs.org/api/ng/directive/ngCloak
@@ -357,6 +337,7 @@ ui bootstrap tweaks
 .uib-datepicker-popup  > li > div.uib-datepicker > table:focus {
     outline: none;
 }
+
 /* ==========================================================================
 NUEVOS ESTILOS
 ========================================================================== */

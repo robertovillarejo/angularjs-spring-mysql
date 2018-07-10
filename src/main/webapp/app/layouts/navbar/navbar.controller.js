@@ -10,7 +10,7 @@
     function NavbarController($state, Principal, ProfileService) {
         var vm = this;
 
-        vm.isNavbarCollapsed = false;
+        vm.isNavbarCollapsed = true;
         vm.isAuthenticated = Principal.isAuthenticated;
 
         ProfileService.getProfileInfo().then(function (response) {
